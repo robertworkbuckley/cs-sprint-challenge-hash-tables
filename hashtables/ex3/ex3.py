@@ -3,8 +3,21 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    length = len(arrays)
+    numbers = {}
+    for array in arrays:
+        for num in array:
+            if num not in numbers:
+                numbers[num] = 1
+            else:
+                numbers[num] += 1
 
-    return result
+    samezies = []
+    for item in list(numbers.items()):
+        if item[1] == length:
+            samezies.append(item[0])
+            
+    return samezies
 
 
 if __name__ == "__main__":
